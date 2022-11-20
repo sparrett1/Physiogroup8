@@ -1,0 +1,21 @@
+%Physio Project Code
+%We need to determine what our x axis will be. I'm assuming 
+%altitude but idk so I didn't move to graphing
+%Declare inputs
+t = input ('How long was the subject at the altitude (days)?');
+a = input ('What is the altitude (km)?');
+s = input ('What is the sex of the subject (m or f)?',"s");
+y = input ('What is the age of the subject (years)?');
+if s == 'm' || s =="M"
+    s=0;
+else
+    s=1;
+end
+%Equation for percent change in plasma volume
+PV = 0.05-(1.93*t)+(0.27*(t^2))-(2.82*a)-(0.58*a*t)-(0.82*s)+(0.73*s*t)+(0.064*a*y);
+%Equation for percent change in cardiac output
+CO = (0.818*PV)-10.94;
+%Equation for percent change in stroke volume
+SV = (1.185*PV)-10.60;
+%Equation for percent change in heart rate
+HR = (-0.61*PV)-2.21;
